@@ -1,0 +1,2 @@
+module HoboOmniauthHelper
+end
