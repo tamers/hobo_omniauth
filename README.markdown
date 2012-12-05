@@ -84,6 +84,8 @@ You probably also want to add something like this to your application.dryml:
 
 You may use more than one provider, but if a user signs in with two different providers, two different user accounts will be created; they will not be associated.   If your user model doesn't allow duplicate names or email addresses, you may get errors instead.
 
+There is a sample application that uses the MultiAuth strategy at https://github.com/Hobo/hobo_omniauth_multiauth_example.
+
 #### MultiAuth
 
 This strategy allows a user to sign in with multiple providers and/or with the standard Hobo username/password pair.
@@ -121,6 +123,8 @@ Obviously, you're going to have to manage this complication for the user.   Ther
         <a href="&logout_path">Log Out</a>
       </else>
     </def>
+
+There is a sample application that uses the MultiAuth strategy at https://github.com/Hobo/hobo_omniauth_multiauth_example.
 
 ### Model Notes
 
