@@ -5,17 +5,17 @@
   <a href="/auth/#{provider}" merge param="default">Login with <%= provider.titleize %></a>
 </def>
 
-<% See `<avatar for="User">` or `<avatar for="Authorization">` %>
+<%# See `<avatar for="User">` or `<avatar for="Authorization">` %>
 <def tag="avatar" polymorphic/>
 
-<% Displays the user's avatar.  If you're using the UserAuth strategy, ensure that :image is in your attr_accessible, or this won't work. %>
+<%# Displays the user's avatar.  If you're using the UserAuth strategy, ensure that :image is in your attr_accessible, or this won't work. %>
 <def tag="avatar" for="User">
   <% src = (this.respond_to?(:image) && this.image) ||
            (this.respond_to?(:authorizations) && this.authorizations.first._?.image) %>
   <img src="&src" merge-attrs/>
 </def>
 
-<% Displays the avatar for an Authorization based on the image attribute passed back from the authorization provider %>
+<%# Displays the avatar for an Authorization based on the image attribute passed back from the authorization provider %>
 <def tag="avatar" for="Authorization">
   <img src="&this.image" merge-attrs/>
 </def>
