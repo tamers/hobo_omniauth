@@ -17,6 +17,6 @@ Gem::Specification.new do |s|
   s.add_dependency "omniauth", "~> 1.1"
   # s.add_dependency "jquery-rails"
 
-  s.files = `git ls-files -z`.split('�')
+  s.files = `git ls-files -z`.split('\0')
   s.add_runtime_dependency('hobo')
 end
