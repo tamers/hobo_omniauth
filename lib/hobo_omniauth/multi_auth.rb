@@ -33,6 +33,9 @@ module HoboOmniauth
           authorization = Authorization.new(info.slice(*Authorization.accessible_attributes.to_a))
           authorization.save!
         end
+        if authorization.respond_to?(:refresh)
+          authorization.refresh(auth) # save latest credentials, update image url, etc.
+        end
 
         authorization.user
       end
