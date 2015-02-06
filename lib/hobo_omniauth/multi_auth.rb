@@ -7,10 +7,11 @@ module HoboOmniauth
         authorization = Authorization.find_by_provider_and_uid(auth['provider'], auth['uid'])
         authorization ||= Authorization.find_by_email_address(auth['info']['email'])
         unless authorization
+          Rails.logger.info "AUTH :: #{auth.to_json}"
           info = auth.info.to_hash
           extra = auth.extra._?.raw_info
           info.reverse_merge!(extra.to_hash) unless extra.nil?
-          info['email_address'] = info['email']
+          info['email_address'] = auth['info']['email']
           info['provider'] = auth.provider
           info['uid'] = auth.uid
 
